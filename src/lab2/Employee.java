@@ -36,7 +36,7 @@ public class Employee {
         this.ssn = ssn;
     }
     
-    public void employeeStartDay(String firstName, String lastName, String ssn){
+    public void completeOrientation(String cubeId){
         this.meetWithHrForBenefitAndSalryInfo();
         this.meetDepartmentStaff();
         this.reviewDeptPolicies();
@@ -48,7 +48,7 @@ public class Employee {
     private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;     
         System.out.println(firstName + " " + lastName + " met with Hr on "
-            + getFormattedDate(orientationDate));
+            + getFormattedDate());
     }
 
     // Assume this must be performed second, and assume that an employee
@@ -56,33 +56,31 @@ public class Employee {
     private void meetDepartmentStaff() {
         metDeptStaff = true;
         System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
-            + getFormattedDate(orientationDate));
+            + getFormattedDate());
     }
 
     // Assume this must be performed third. And assume that because department
     // policies may change that this method may need to be called 
     // independently from other classes.
-    private void reviewDeptPolicies() {
+    public void reviewDeptPolicies() {
         reviewedDeptPolicies = true;      
         System.out.println(firstName + " " + lastName + " reviewed Dept policies on "
-            + getFormattedDate(orientationDate));
+            + getFormattedDate());
     }
 
     // Assume this must be performed 4th. And assume that because employees
     // sometimes change office locations that this method may need to be called 
     // independently from other classes.
-    private void moveIntoCubicle(String cubeId) {
+    public void moveIntoCubicle(String cubeId) {
         this.cubeId = cubeId;
         this.movedIn = true;       
         System.out.println(firstName + " " + lastName + " moved into cubicle "
-                + cubeId + " on " + getFormattedDate(orientationDate));
+                + cubeId + " on " + getFormattedDate());
     }
     
-    private String getFormattedDate(Date orientationDate){
+    public String getFormattedDate(){
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        String fmtDate = sdf.format(orientationDate);
-        
-        return fmtDate;
+        return sdf.format(orientationDate);
     }
 
     public String getFirstName() {
