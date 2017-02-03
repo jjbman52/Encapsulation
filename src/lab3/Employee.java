@@ -46,8 +46,11 @@ public class Employee {
     private boolean movedIn;
     private String cubeId;
     private Date orientationDate;
+    
+    private OutputService outputService;
 
     public Employee(String firstName, String lastName, String ssn) {
+        outputService = new OutputService(this);
         // Using setter method guarantees validation will be performed
         // Ignore the warning messages for now. Will be explained later
         setFirstName(firstName);
@@ -89,8 +92,8 @@ public class Employee {
     // and should only be called as part of the larger task of:
     private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;
-        System.out.println(firstName + " " + lastName + " met with Hr on "
-            + getFormattedDate());
+        outputService.doOuptut(firstName + " " + lastName + " met with Hr on "
+            + orientationDate);
     }
 
     // Assume this must be performed first, and assume that an employee
@@ -100,8 +103,8 @@ public class Employee {
     // doFirtTimeOrientation()
     private void meetDepartmentStaff() {
         metDeptStaff = true;
-        System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
-            + getFormattedDate());
+        outputService.doOuptut(firstName + " " + lastName + " met with Dept. Staff on "
+            + orientationDate);
     }
 
     // Assume this must be performed third. And assume that because department
@@ -109,7 +112,7 @@ public class Employee {
     // independently from other classes.
     public void reviewDeptPolicies() {
         reviewedDeptPolicies = true;
-        System.out.println(firstName + " " + lastName + " reviewed Dept policies on "
+        outputService.doOuptut(firstName + " " + lastName + " reviewed Dept policies on "
             + getFormattedDate());
     }
 
@@ -119,8 +122,8 @@ public class Employee {
     public void moveIntoCubicle(String cubeId) {
         this.cubeId = cubeId;
         this.movedIn = true;
-        System.out.println(firstName + " " + lastName + " moved into cubicle "
-                + cubeId + " on " + getFormattedDate());
+        outputService.doOuptut(firstName + " " + lastName + " moved into cubicle "
+            + cubeId + " on " + getFormattedDate());
     }
 
     public String getFirstName() {
@@ -133,7 +136,7 @@ public class Employee {
     // to display an error message -- not the job of this class!
     public void setFirstName(String firstName) {
         if(firstName == null || firstName.isEmpty()) {
-            throw new IllegalArgumentException("first name is required");
+            outputService.doOuptut("first name is required");
         }
         this.firstName = firstName;
     }
@@ -144,7 +147,7 @@ public class Employee {
 
     public void setLastName(String lastName) {
         if(lastName == null || lastName.isEmpty()) {
-            System.out.println("last name is required");
+            outputService.doOuptut("last name is required");
         }
         this.lastName = lastName;
     }
@@ -155,7 +158,7 @@ public class Employee {
 
     public void setSsn(String ssn) {
         if(ssn == null || ssn.length() < 9 || ssn.length() > 11) {
-            System.out.println("ssn is required and must be "
+            outputService.doOuptut("ssn is required and must be "
                     + "between 9 and 11 characters (if hyphens are used)");
         }
         this.ssn = ssn;
@@ -201,7 +204,7 @@ public class Employee {
     
     public void setCubeId(String cubeId) {
         if(cubeId == null || cubeId.isEmpty()) {
-            System.out.println("cube id is required");
+            outputService.doOuptut("cube id is required");
         }
         this.cubeId = cubeId;
     }
@@ -212,7 +215,7 @@ public class Employee {
 
     public void setOrientationDate(Date orientationDate) {
         if(orientationDate == null) {
-            System.out.println("orientationDate is required");
+            outputService.doOuptut("orientationDate is required");
         }
         this.orientationDate = orientationDate;
     }
