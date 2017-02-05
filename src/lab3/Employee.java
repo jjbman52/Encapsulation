@@ -92,7 +92,7 @@ public class Employee {
     // and should only be called as part of the larger task of:
     private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;
-        outputService.doOuptut(firstName + " " + lastName + " met with Hr on "
+        outputService.doOutput(firstName + " " + lastName + " met with Hr on "
             + orientationDate);
     }
 
@@ -103,7 +103,7 @@ public class Employee {
     // doFirtTimeOrientation()
     private void meetDepartmentStaff() {
         metDeptStaff = true;
-        outputService.doOuptut(firstName + " " + lastName + " met with Dept. Staff on "
+        outputService.doOutput(firstName + " " + lastName + " met with Dept. Staff on "
             + orientationDate);
     }
 
@@ -112,7 +112,7 @@ public class Employee {
     // independently from other classes.
     public void reviewDeptPolicies() {
         reviewedDeptPolicies = true;
-        outputService.doOuptut(firstName + " " + lastName + " reviewed Dept policies on "
+        outputService.doOutput(firstName + " " + lastName + " reviewed Dept policies on "
             + getFormattedDate());
     }
 
@@ -122,7 +122,7 @@ public class Employee {
     public void moveIntoCubicle(String cubeId) {
         this.cubeId = cubeId;
         this.movedIn = true;
-        outputService.doOuptut(firstName + " " + lastName + " moved into cubicle "
+        outputService.doOutput(firstName + " " + lastName + " moved into cubicle "
             + cubeId + " on " + getFormattedDate());
     }
 
@@ -136,7 +136,7 @@ public class Employee {
     // to display an error message -- not the job of this class!
     public void setFirstName(String firstName) {
         if(firstName == null || firstName.isEmpty()) {
-            outputService.doOuptut("first name is required");
+            outputService.doOutput("first name is required");
         }
         this.firstName = firstName;
     }
@@ -147,7 +147,7 @@ public class Employee {
 
     public void setLastName(String lastName) {
         if(lastName == null || lastName.isEmpty()) {
-            outputService.doOuptut("last name is required");
+            outputService.doOutput("last name is required");
         }
         this.lastName = lastName;
     }
@@ -158,7 +158,7 @@ public class Employee {
 
     public void setSsn(String ssn) {
         if(ssn == null || ssn.length() < 9 || ssn.length() > 11) {
-            outputService.doOuptut("ssn is required and must be "
+            outputService.doOutput("ssn is required and must be "
                     + "between 9 and 11 characters (if hyphens are used)");
         }
         this.ssn = ssn;
@@ -204,7 +204,7 @@ public class Employee {
     
     public void setCubeId(String cubeId) {
         if(cubeId == null || cubeId.isEmpty()) {
-            outputService.doOuptut("cube id is required");
+            outputService.doOutput("cube id is required");
         }
         this.cubeId = cubeId;
     }
@@ -215,7 +215,7 @@ public class Employee {
 
     public void setOrientationDate(Date orientationDate) {
         if(orientationDate == null) {
-            outputService.doOuptut("orientationDate is required");
+            outputService.doOutput("orientationDate is required");
         }
         this.orientationDate = orientationDate;
     }

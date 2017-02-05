@@ -8,7 +8,7 @@ public class OutputService {
         this.employee = employee;
     }
     
-    public void doOuptut(String msg) {
+    public void doOutput(String msg) {
         System.out.println(msg);
     }
 }
