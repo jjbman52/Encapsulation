@@ -1,8 +1,7 @@
-package InheritancePractice.Animal;
+package InheritancePractice.Creature;
 
 public class Dragon extends LegendaryCreature{
     private int wings = 2;
-    private int legs = 4;
     
     @Override
     public void usePower(){
@@ -12,5 +11,13 @@ public class Dragon extends LegendaryCreature{
     @Override
     public void move(){
         System.out.println("Flying");
+    }
+
+    public int getWings() {
+        return wings;
+    }
+
+    public void setWings(int wings) {
+        this.wings = wings;
     }
 }

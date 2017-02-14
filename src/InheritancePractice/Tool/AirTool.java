@@ -1,28 +1,40 @@
 package InheritancePractice.Tool;
 
 public class AirTool extends Tool{
-    private int size;
-    private int price;
+    private int airPressure;
+    private boolean airHoseAttached;
 
-    public void storeTool(){
-        System.out.println("");
+    public void attachAirHose(){
+        if (airHoseAttached == false){
+            airHoseAttached = true;
+            System.out.println("Air Hose is now attached.");
+        }else{
+            System.out.println("Air Hose is already attached.");
+        }
     }
     
-    public int getSize() {
-        return size;
+    public void detachAirHose(){
+        if (airHoseAttached == true){
+            airHoseAttached = false;
+            System.out.println("Air Hose is now detached.");
+        }else{
+            System.out.println("Air Hose is already detached.");
+        }
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public int getAirPressure() {
+        return airPressure;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
+    public void setAirPressure(int airPressure) {
+        this.airPressure = airPressure;
     }
     
-    
+    public boolean isAirHoseAttached() {
+        return airHoseAttached;
+    }
+
+    public void setAirHoseAttached(boolean airHoseAttached) {
+        this.airHoseAttached = airHoseAttached;
+    }
 }

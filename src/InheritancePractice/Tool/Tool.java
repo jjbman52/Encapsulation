@@ -23,5 +23,4 @@ public class Tool {
     public void setWarrenty(String warrenty) {
         this.warrenty = warrenty;
     }
-    
 }

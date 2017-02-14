@@ -1,27 +1,26 @@
 package InheritancePractice.Weapon;
 
 public class Sword extends Weapon{
-    private String length;
-    private String width;
+    private String sharpness;
+    private String numberOfBlades;
 
     public void cut(){
-        System.out.println("");
-    }
-    
-    public String getLength() {
-        return length;
+        System.out.println("You are cutting");
     }
 
-    public void setLength(String length) {
-        this.length = length;
+    public String getSharpness() {
+        return sharpness;
     }
 
-    public String getWidth() {
-        return width;
+    public void setSharpness(String sharpness) {
+        this.sharpness = sharpness;
     }
 
-    public void setWidth(String width) {
-        this.width = width;
+    public String getNumberOfBlades() {
+        return numberOfBlades;
     }
-    
+
+    public void setNumberOfBlades(String numberOfBlades) {
+        this.numberOfBlades = numberOfBlades;
+    }
 }

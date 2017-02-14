@@ -1,33 +1,28 @@
 package InheritancePractice.Drink;
 
 public class Coffee extends CaffeinatedDrink{
-    private String brand;
-    private String strength;
+    private String roast;
+    private String coffeeStrength;
 
     @Override
-    public void hydrate(){
-        System.out.println("You recieved some hydration");
-    }
-    
-    @Override
-    public void giveEnergy(){
-        System.out.println("You gained energy");
-    }
-    
-    public String getBrand() {
-        return brand;
+    public int addIce(int numberOfIceCubes){
+        coffeeStrength = "The Coffee is losing it's strength.";
+        return numberOfIceCubes;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public String getRoast() {
+        return roast;
     }
 
-    public String getStrength() {
-        return strength;
+    public void setRoast(String roast) {
+        this.roast = roast;
     }
 
-    public void setStrength(String strength) {
-        this.strength = strength;
+    public String getCoffeeStrength() {
+        return coffeeStrength;
     }
-    
+
+    public void setCoffeeStrength(String coffeeStrength) {
+        this.coffeeStrength = coffeeStrength;
+    }
 }

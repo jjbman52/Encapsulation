@@ -1,8 +1,10 @@
-package InheritancePractice.GolfClub;
+package InheritancePractice.GolfItem;
 
-public class GolfClub {
+public class GolfClub extends GolfItem{
     private int length;
     public String shaftType;
+    private int loft;
+    private String grip;
     
     public void hitBall(){
         System.out.println("");
@@ -22,5 +24,21 @@ public class GolfClub {
 
     public void setShaftType(String shaftType) {
         this.shaftType = shaftType;
+    }
+
+    public int getLoft() {
+        return loft;
+    }
+
+    public void setLoft(int loft) {
+        this.loft = loft;
+    }
+
+    public String getGrip() {
+        return grip;
+    }
+
+    public void setGrip(String grip) {
+        this.grip = grip;
     }
 }

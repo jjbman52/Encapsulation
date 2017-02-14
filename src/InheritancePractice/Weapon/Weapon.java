@@ -5,7 +5,7 @@ public class Weapon {
     private int style;
 
     public void useWeapon(){
-        System.out.println("");
+        System.out.println("Weapon is being used");
     }
 
     public int getType() {

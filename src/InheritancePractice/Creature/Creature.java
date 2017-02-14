@@ -1,11 +1,20 @@
-package InheritancePractice.Animal;
+package InheritancePractice.Creature;
 
-public class Animal {
+public class Creature {
+    private String name;
     private int age;
     private String species;
     
     public void move(){
         System.out.println("");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {

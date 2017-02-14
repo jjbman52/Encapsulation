@@ -1,8 +1,7 @@
-package InheritancePractice.SuperHero;
+package InheritancePractice.Creature;
 
-public class SuperHero {
+public class LegendaryCreature extends Creature{
     private String power;
-    private String name;
     
     public void usePower(){
         System.out.println("");
@@ -15,13 +14,4 @@ public class SuperHero {
     public void setPower(String power) {
         this.power = power;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
 }

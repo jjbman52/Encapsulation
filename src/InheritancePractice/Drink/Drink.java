@@ -1,11 +1,24 @@
 package InheritancePractice.Drink;
 
 public class Drink {
+    private String name;
     private int calories;
-    private int size;
+    private int numberOfIceCubes;
+    private boolean ice;
+
+    public int addIce(int numberOfIceCubes){   
+        if(ice == true){
+            System.out.println("There is already ice in ");
+        }
+        return numberOfIceCubes;
+    }
     
-    public void hydrate(){
-        System.out.println("");
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getCalories() {
@@ -16,12 +29,19 @@ public class Drink {
         this.calories = calories;
     }
 
-    public int getSize() {
-        return size;
+    public int getNumberOfIceCubes() {
+        return numberOfIceCubes;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public void setNumberOfIceCubes(int numberOfIceCubes) {
+        this.numberOfIceCubes = numberOfIceCubes;
     }
-    
+
+    public boolean isIce() {
+        return ice;
+    }
+
+    public void setIce(boolean ice) {
+        this.ice = ice;
+    }
 }

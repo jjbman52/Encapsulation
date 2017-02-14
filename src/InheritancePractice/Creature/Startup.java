@@ -1,4 +1,4 @@
-package InheritancePractice.Animal;
+package InheritancePractice.Creature;
 
 public class Startup {
     
